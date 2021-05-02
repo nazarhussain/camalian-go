@@ -32,6 +32,8 @@ type Color struct {
 	HSL HSL
 }
 
+// Build Color object from rgb values
+// Specify buildAll = true if you want to calculate HSL/HSV values as well
 func (c *Color) Build(r, g, b uint8, buildAll bool) *Color {
 	c.R = r
 	c.G = g
@@ -43,6 +45,8 @@ func (c *Color) Build(r, g, b uint8, buildAll bool) *Color {
 	return c
 }
 
+// Build Color object from Hex string e.g. #FF7913
+// Specify buildAll = true if you want to calculate HSL/HSV values as well
 func (c *Color) BuildFromHex(hex string, buildAll bool) (*Color, error) {
 	index := 0
 
@@ -76,6 +80,7 @@ func (c *Color) BuildFromHex(hex string, buildAll bool) (*Color, error) {
 	return c, nil
 }
 
+// Calculate Hue distance between two colors
 func (c *Color) HueDistance(c2 *Color) uint16 {
 	h1 := ((c.HSL.H - c2.HSL.H) % 360)
 	h2 := ((c2.HSL.H - c.HSL.H) % 360)
@@ -84,6 +89,7 @@ func (c *Color) HueDistance(c2 *Color) uint16 {
 	return min.(uint16)
 }
 
+// Calculate RGB distance between two colors
 func (c *Color) RgbDistance(c2 *Color) float64 {
 	rsqr := math.Pow((float64(c.R) - float64(c2.R)), 2)
 	gsqr := math.Pow((float64(c.G) - float64(c2.G)), 2)

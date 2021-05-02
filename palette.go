@@ -79,6 +79,8 @@ var colorSortPropMap = map[SortProperty]func(*Color, *Color, bool) bool{
 	},
 }
 
+// Build color palette from hex strings
+//  new(Palette).BuildFromHex("#FF0000", "#00FF00")
 func (p *Palette) BuildFromHex(colors ...string) (*Palette, error) {
 	for _, hex := range colors {
 		c, err := new(Color).BuildFromHex(hex, true)
@@ -93,8 +95,9 @@ func (p *Palette) BuildFromHex(colors ...string) (*Palette, error) {
 	return p, nil
 }
 
-func (p *Palette) BuildFromImage(image Quantizeable) *Palette {
-	for _, c := range image.Pixels() {
+// Build color palette from a Quantizeable interface
+func (p *Palette) BuildFromImage(source Quantizeable) *Palette {
+	for _, c := range source.Pixels() {
 		c := new(Color).Build(c.R, c.G, c.B, true)
 
 		*p = append(*p, c)
@@ -103,6 +106,7 @@ func (p *Palette) BuildFromImage(image Quantizeable) *Palette {
 	return p
 }
 
+// Sort color palette by some properties
 func (p *Palette) SortBy(v SortProperty, order bool) *Palette {
 	sort.SliceStable(*p, func(i, j int) bool {
 		return colorSortPropMap[v]((*p)[i], (*p)[j], order)
@@ -111,10 +115,12 @@ func (p *Palette) SortBy(v SortProperty, order bool) *Palette {
 	return p
 }
 
+// Sort palette to visually similar colors
 func (p *Palette) SortSimilarColors() *Palette {
 	return p.SortBy(SortProperty(HSLHue), true)
 }
 
+// Calculate avargage color in RGB Color Space for the whole palette
 func (p *Palette) AverageColor() *Color {
 	colors := make([]interface{}, len(*p))
 	for index, value := range *p {
@@ -138,6 +144,7 @@ func (p *Palette) AverageColor() *Color {
 	return new(Color).Build(uint8(reds.(float64)/size), uint8(greens.(float64)/size), uint8(blues.(float64)/size), true)
 }
 
+// Filter colors in particular range for lightness in HSL color space
 func (p *Palette) LightColors(limit1, limit2 uint16) *Palette {
 	newPalette := new(Palette)
 	min, max := utils.FindMinMax(limit1, limit2)
@@ -163,10 +170,12 @@ func (p *Palette) ToHex() []string {
 	return colors
 }
 
+// Quantize the palette by specific Quantizer for given number of colors
 func (p *Palette) Quantize(q Quantizer, count uint) *Palette {
 	return q.Quantize(p, count)
 }
 
+// Remove redundant colors in palette and get unique colors
 func (p *Palette) Unique() *Palette {
 	keys := make(map[string]bool)
 	p2 := new(Palette)
@@ -183,6 +192,7 @@ func (p *Palette) Unique() *Palette {
 	return p2
 }
 
+// Fetch common colors among two color palettes
 func (p *Palette) Common(p2 *Palette) *Palette {
 	m := make(map[string]bool)
 	result := new(Palette)

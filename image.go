@@ -9,6 +9,7 @@ import (
 	_ "image/png"
 )
 
+// The Image construct which implements camalian.Quantizeable interface
 type Image struct {
 	FilePath string
 }

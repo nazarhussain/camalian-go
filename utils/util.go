@@ -6,6 +6,7 @@ import (
 	"reflect"
 )
 
+// Find min and max values from given values
 func FindMinMax(a ...interface{}) (interface{}, interface{}) {
 	var max interface{}
 	var min interface{}
@@ -83,6 +84,7 @@ func FindMinMax(a ...interface{}) (interface{}, interface{}) {
 	return min, max
 }
 
+// Find an object from a slice with given selector function
 func Find(slice interface{}, f func(value interface{}) bool) int {
 	s := reflect.ValueOf(slice)
 	if s.Kind() == reflect.Slice {
@@ -95,6 +97,7 @@ func Find(slice interface{}, f func(value interface{}) bool) int {
 	return -1
 }
 
+// Calculate sum for the whole slice values
 func Sum(vs []interface{}) interface{} {
 	sum := 0.0
 
@@ -120,6 +123,7 @@ func Sum(vs []interface{}) interface{} {
 	return sum
 }
 
+// Collect object from slice by given collection function
 func Collect(vs []interface{}, f func(interface{}) interface{}) []interface{} {
 	vsm := make([]interface{}, len(vs))
 
