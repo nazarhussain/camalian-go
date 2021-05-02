@@ -1,4 +1,8 @@
 # Camalian-Go
+
+[![GitHub license](https://img.shields.io/github/license/nazarhussain/camalian-go)](https://github.com/nazarhussain/camalian-go/blob/main/LICENSE)
+ [![Build](https://github.com/nazarhussain/camalian-go/actions/workflows/go.yml/badge.svg)](https://github.com/nazarhussain/camalian-go/actions/workflows/go.yml)
+
 Color extraction utility in Golang
 
 For details information on the utility please look at the following article. [Advance Color Quantization with Camalian](https://basicdrift.com/advance-color-quantization-with-camalian-ff369b65bb40). This implementation in Golang inspired by [Camalian Ruby Implementation](https://github.com/nazarhussain/camalian).
