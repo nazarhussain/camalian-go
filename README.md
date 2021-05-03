@@ -1,7 +1,7 @@
 # Camalian-Go
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/nazarhussain/camalian-go)](https://goreportcard.com/report/github.com/nazarhussain/camalian-go) [![GitHub license](https://img.shields.io/github/license/nazarhussain/camalian-go)](https://github.com/nazarhussain/camalian-go/blob/main/LICENSE)
- [![Build](https://github.com/nazarhussain/camalian-go/actions/workflows/build.yml/badge.svg)](https://github.com/nazarhussain/camalian-go/actions/workflows/build.yml)
+ [![Build](https://github.com/nazarhussain/camalian-go/actions/workflows/build.yml/badge.svg)](https://github.com/nazarhussain/camalian-go/actions/workflows/build.yml) [![codecov](https://codecov.io/gh/nazarhussain/camalian-go/branch/main/graph/badge.svg?token=PZIHW9TIUJ)](https://codecov.io/gh/nazarhussain/camalian-go)
 
 Color extraction utility in Golang
 
