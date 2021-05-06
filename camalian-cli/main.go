@@ -18,7 +18,7 @@ var availableQuantizers = map[string]camalian.Quantizer{
 func main() {
 	commando.
 		SetExecutableName("camalian-cli").
-		SetVersion("v0.1.0").
+		SetVersion("v0.2.0").
 		SetDescription("Extract color palettes from images.")
 
 	commando.
