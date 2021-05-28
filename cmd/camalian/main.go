@@ -5,7 +5,7 @@ import (
 	"strings"
 
 	"github.com/nazarhussain/camalian-go"
-	"github.com/nazarhussain/camalian-go/quantizers"
+	quantizers "github.com/nazarhussain/camalian-go/pkg/quantizers"
 	"github.com/thatisuday/commando"
 )
 
@@ -17,7 +17,7 @@ var availableQuantizers = map[string]camalian.Quantizer{
 
 func main() {
 	commando.
-		SetExecutableName("camalian-cli").
+		SetExecutableName("camalian").
 		SetVersion("v0.2.0").
 		SetDescription("Extract color palettes from images.")
 

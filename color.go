@@ -5,7 +5,7 @@ import (
 	"math"
 	"strconv"
 
-	utils "github.com/nazarhussain/camalian-go/utils"
+	utils "github.com/nazarhussain/camalian-go/pkg/utils"
 )
 
 type HSL struct {

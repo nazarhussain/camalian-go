@@ -3,7 +3,7 @@ package camalian
 import (
 	"sort"
 
-	utils "github.com/nazarhussain/camalian-go/utils"
+	utils "github.com/nazarhussain/camalian-go/pkg/utils"
 )
 
 type Palette []*Color

@@ -11,7 +11,7 @@ func TestHistogram(t *testing.T) {
 	q := Histogram{}
 	palleteColors := []string{
 		"#4DD915", "#49CC23", "#45C031", "#41B43F", "#3DA84D", "#399C5B", "#359069", "#318478", "#2D7886", "#296C94", "#2560A2", "#2154B0", "#1D48BE", "#193CCC", "#1530DB"}
-	filePath := "../testdata/palette.png"
+	filePath := "../../testdata/palette.png"
 	image := &camalian.Image{FilePath: filePath}
 	palette := new(camalian.Palette).BuildFromImage(image)
 	palette2 := q.Quantize(palette, 15)

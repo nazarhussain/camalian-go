@@ -14,16 +14,16 @@ For details information on the utility please look at the following article. [Ad
 To use the binary binary for utility. Install it with: 
 
 ```bash
-$ GO111MODULE=on go get -u "github.com/nazarhussain/camalian-go/camalian-cli"
+$ GO111MODULE=on go get -u "github.com/nazarhussain/camalian-go/cmd/camalian"
 ```
 
 The usage is as follows:
 
 ```bash
-$ camalian-cli --help
+$ camalian --help
 
 Usage:
-   camalian-cli <path> {flags}
+   camalian <path> {flags}
 
 Commands: 
    help                          displays usage information

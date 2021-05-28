@@ -4,7 +4,7 @@ import (
 	"reflect"
 
 	"github.com/nazarhussain/camalian-go"
-	utils "github.com/nazarhussain/camalian-go/utils"
+	utils "github.com/nazarhussain/camalian-go/pkg/utils"
 )
 
 type MedianCut struct{}

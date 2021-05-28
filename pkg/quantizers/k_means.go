@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/nazarhussain/camalian-go"
-	utils "github.com/nazarhussain/camalian-go/utils"
+	utils "github.com/nazarhussain/camalian-go/pkg/utils"
 )
 
 type KMeans struct{}
